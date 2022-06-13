@@ -166,14 +166,12 @@ install_using_github() {
     tar xf "${git_lfs_filename}" -C .
     echo "Installing..."
     if [ -f "./install.sh" ]; then
-        echo "A" #TODO REMOVE
         ./install.sh
     else
-        echo "B" #TODO REMOVE
         # Starting around v3.2.0, the release
         # artifact file structure changed slightly
         enclosed_folder="git-lfs-${GIT_LFS_VERSION}"
-        cd enclosed_folder
+        cd ${enclosed_folder}
             ./install.sh
         cd ../
     fi
