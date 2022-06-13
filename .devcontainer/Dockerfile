@@ -8,5 +8,5 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:jammy
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
 COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
-RUN bash /tmp/library-scripts/git-lfs-debian.sh
+RUN bash /tmp/library-scripts/git-lfs-debian.sh \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
